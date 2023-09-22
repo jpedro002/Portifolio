@@ -3,16 +3,13 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
-import { PrismicProvider } from "@prismicio/react";
-import { client } from "./services/prismic";
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <PrismicProvider client={client}>
         <App />
-      </PrismicProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
