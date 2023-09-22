@@ -18,11 +18,9 @@ import SEO from "../data/seo";
 
 import "./styles/homepage.css";
 
-import { useFirstPrismicDocument } from '@prismicio/react'
 
 const Homepage = () => {
-	const [document] = useFirstPrismicDocument('hero_home')
-   console.log(document);
+	
 
 	const [stayLogo, setStayLogo] = useState(false);
 	const [logoSize, setLogoSize] = useState(80);
