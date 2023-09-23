@@ -1,8 +1,9 @@
+import 'dotenv/config'
 import * as prismic from '@prismicio/client'
 
-// Fill in your repository name
-export const repositoryName = ''
 
-export const client = prismic.createClient(repositoryName, {
-  accessToken: '',
+export const client = prismic.createClient(process.env.REPOSITORY_NAME, {
+  accessToken: process.env.ACCESS_TOKEN,
 })
+
+console.log(client);
