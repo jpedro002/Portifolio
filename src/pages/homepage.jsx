@@ -4,7 +4,10 @@ import { Helmet } from "react-helmet";
 import { faMailBulk } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faInstagram } from "@fortawesome/free-brands-svg-icons";
-import { useFirstPrismicDocument } from "@prismicio/react";
+import {
+  useFirstPrismicDocument,
+  useSinglePrismicDocument,
+} from "@prismicio/react";
 
 import Logo from "../components/common/logo";
 import Footer from "../components/common/footer";
@@ -17,8 +20,7 @@ import SEO from "../data/seo";
 import "./styles/homepage.css";
 
 const Homepage = () => {
-  const [document] = useFirstPrismicDocument('hero_home');
-  console.log(document);
+  const [document] = useSinglePrismicDocument("hero_home");
 
   const [stayLogo, setStayLogo] = useState(false);
   const [logoSize, setLogoSize] = useState(80);
@@ -85,11 +87,11 @@ const Homepage = () => {
             <div className="homepage-first-area">
               <div className="homepage-first-area-left-side">
                 <div className="title homepage-title">
-				{document && document.data && document.data.titulo_home[0].text}
+                  {document?.data?.titulo_home[0].text}
                 </div>
 
                 <div className="subtitle homepage-subtitle">
-				  {document && document.data && document.data.hello_home[0].text}
+                  {document?.data?.hello_home[0]?.text}
                 </div>
               </div>
 

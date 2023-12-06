@@ -10,73 +10,71 @@ import INFO from "../data/user";
 import SEO from "../data/seo";
 
 import "./styles/about.css";
+import { useSinglePrismicDocument } from "@prismicio/react";
 
 const About = () => {
-	useEffect(() => {
-		window.scrollTo(0, 0);
-	}, []);
+  const [about] = useSinglePrismicDocument("about");
 
-	const currentSEO = SEO.find((item) => item.page === "about");
+  console.log(about);
 
-	return (
-		<React.Fragment>
-			<Helmet>
-				<title>{`About | ${INFO.main.title}`}</title>
-				<meta name="description" content={currentSEO.description} />
-				<meta
-					name="keywords"
-					content={currentSEO.keywords.join(", ")}
-				/>
-			</Helmet>
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
-			<div className="page-content">
-				<NavBar active="about" />
-				<div className="content-wrapper">
-					<div className="about-logo-container">
-						<div className="about-logo">
-							<Logo width={46} />
-						</div>
-					</div>
+  const currentSEO = SEO.find((item) => item.page === "about");
 
-					<div className="about-container">
-						<div className="about-main">
-							<div className="about-right-side">
-								<div className="title about-title">
-									{INFO.about.title}
-								</div>
+  return (
+    <React.Fragment>
+      <Helmet>
+        <title>{`About | ${INFO.main.title}`}</title>
+        <meta name="description" content={currentSEO.description} />
+        <meta name="keywords" content={currentSEO.keywords.join(", ")} />
+      </Helmet>
 
-								<div className="subtitle about-subtitle">
-									{INFO.about.description}
-								</div>
-							</div>
+      <div className="page-content">
+        <NavBar active="about" />
+        <div className="content-wrapper">
+          <div className="about-logo-container">
+            <div className="about-logo">
+              <Logo width={46} />
+            </div>
+          </div>
 
-							<div className="about-left-side">
-								<div className="about-image-container">
-									<div className="about-image-wrapper">
-										<img
-											src="about.jpg"
-											alt="about"
-											className="about-image"
-										/>
-									</div>
-								</div>
+          <div className="about-container">
+            <div className="about-main">
+              <div className="about-right-side">
+                <div className="title about-title">
+                  {about?.data?.about_title?.[0]?.text ?? ""}
+                </div>
 
-								<div className="about-socials">
-									<Socials />
-								</div>
-							</div>
-						</div>
-						<div className="about-socials-mobile">
-							<Socials />
-						</div>
-					</div>
-					<div className="page-footer">
-						<Footer />
-					</div>
-				</div>
-			</div>
-		</React.Fragment>
-	);
+                <div className="subtitle about-subtitle">
+                  {about?.data?.about_paragraph?.[0]?.text ?? ""}
+                </div>
+              </div>
+
+              <div className="about-left-side">
+                <div className="about-image-container">
+                  <div className="about-image-wrapper">
+                    <img src="about.jpg" alt="about" className="about-image" />
+                  </div>
+                </div>
+
+                <div className="about-socials">
+                  <Socials />
+                </div>
+              </div>
+            </div>
+            <div className="about-socials-mobile">
+              <Socials />
+            </div>
+          </div>
+          <div className="page-footer">
+            <Footer />
+          </div>
+        </div>
+      </div>
+    </React.Fragment>
+  );
 };
 
 export default About;

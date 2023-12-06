@@ -4,11 +4,7 @@
   display: flex;
   justify-content: left;
   align-items: center;
-  padding-top: 130px;
-}
-
-.homepage-container {
-  padding-top: 25px;
+  padding-top: 8.125rem;
 }
 
 .homepage-first-area {
@@ -37,8 +33,8 @@
 }
 
 .homepage-image-container {
-  width: 370px;
-  height: 370px;
+  width: 23.125rem;
+  height: 23.125rem;
 }
 
 .homepage-image-wrapper {
@@ -55,12 +51,12 @@
   display: flex;
   justify-content: left;
   align-items: center;
-  padding-top: 30px;
+  padding-top: 1.875rem;
 }
 
 .homepage-social-icon {
-  padding-right: 20px;
-  font-size: 25px;
+  padding-right: 1.25rem;
+  font-size: 1.5625rem;
   transition: color 0.2s ease-in-out;
   color: var(--secondary-color);
 }
@@ -74,64 +70,71 @@
 }
 
 .homepage-projects {
-  flex-basis: 300px;
-  padding-top: 40px;
+  flex-basis: 18.75rem;
+  padding-top: 2.5rem;
 }
 
 .homepage-articles {
-  flex-basis: 900px;
-  padding-top: 30px;
-  margin-left: -30px;
+  flex-basis: 56.25rem;
+  padding-top: 1.875rem;
+  margin-left: -1.875rem;
 }
 
 .homepage-article {
-  padding-bottom: 5px;
+  padding-bottom: 0.3125rem;
 }
 
 .homepage-works {
-  flex-basis: 600px;
-  padding-top: 30px;
+  flex-basis: 37.5rem;
+  padding-top: 1.875rem;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 64rem) {
   .homepage-first-area {
     flex-direction: column;
   }
 
   .homepage-first-area-left-side {
     display: flex;
-    flex-direction: column; /* Changed: set direction to column */
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    order: 2;
+  }
+  .homepage-first-area-right-side {
+    display: flex;
+    flex-direction: column;
     align-items: flex-start;
     width: 100%;
     order: 2;
   }
 
   .homepage-title {
-    width: 100% !important;
-    margin-top: 20px;
+    width: 100% ;
+    margin-top: 1.25rem;
     order: 2;
   }
 
   .homepage-subtitle {
     width: 100% !important;
-    margin-top: 10px;
+    margin-top: 0.625rem;
     order: 3;
   }
 
   .homepage-first-area-right-side {
     width: 100%;
     order: 1;
-    margin-bottom: 100px;
+    margin-bottom: 6.25rem;
   }
 
   .homepage-image-wrapper {
-	transform: rotate(0deg);
+    transform: rotate(0deg);
   }
 
   .homepage-image-container {
-    padding-top: 50px;
-    padding-bottom: 50px;
-    margin-left: 10px;
+    padding-top: 3.125rem;
+    padding-bottom: 3.125rem;
+    margin-left: 0.625rem;
     order: 1;
   }
 
@@ -149,7 +152,7 @@
 
   .homepage-works {
     flex-basis: auto;
-    margin-left: -25px;
-    margin-right: -25px;
+    margin-left: -1.5625rem;
+    margin-right: -1.5625rem;
   }
 }

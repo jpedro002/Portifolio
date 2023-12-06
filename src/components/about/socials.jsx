@@ -28,6 +28,7 @@ const Socials = () => {
 					<div className="social-text">Follow on GitHub</div>
 				</a>
 			</div>
+			
 
 			<div className="social">
 				<a
